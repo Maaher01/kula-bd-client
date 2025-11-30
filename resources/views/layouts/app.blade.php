@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/lenis.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
+    <!--toastr-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
     <!--favicon-->
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" />
@@ -66,6 +68,26 @@
     <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
     <script src="{{ asset('assets/js/default-passive-events.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "timeOut": "1500"
+        }
+        @if(session('success'))
+        toastr.success("{{ session('success') }}");
+        @endif
 
+        @if(session('error'))
+        toastr.error("{{ session('error') }}");
+        @endif
+    </script>
     @yield('script')
 </body>

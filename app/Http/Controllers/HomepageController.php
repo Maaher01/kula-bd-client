@@ -74,74 +74,6 @@ class HomepageController extends Controller
         return view('components.faq', compact('allfaqs'));
     }
 
-    public function ourmenu()
-    {
-        $specialdishsection = DB::table("sections")->where("_status", 1)->where("_menuid", 8)->where("_sort", 1)->first();
-        $specialdishcomponent = DB::table("components")->where("_status", 1)->where("_menuid", 8)->where("_sectionid", 4)->get();
-
-        $appetizersection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 1)->get();
-        $appetizercomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 7)->get();
-
-        $dinnersection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 2)->get();
-        $dinnercomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 12)->get();
-
-        $bakerysection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 3)->get();
-        $bakerycomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 13)->get();
-
-        $dessertsection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 4)->get();
-        $dessertcomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 14)->get();
-
-        $coffeesection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 5)->get();
-        $coffeecomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 16)->get();
-
-        $maincoursesection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 6)->get();
-        $maincoursecomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 10)->get();
-
-        $fishsection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 7)->get();
-        $fishcomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 17)->get();
-
-        $grillsection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 8)->get();
-        $grillcomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 18)->get();
-
-        $specialsection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 9)->get();
-        $specialcomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 19)->get();
-
-        $beveragesection = DB::table("sections")->where("_status", 1)->where("_menuid", 3)->where("_sort", 10)->get();
-        $beveragecomponent = DB::table("components")->where("_status", 1)->where("_menuid", 3)->where("_sectionid", 11)->get();
-
-        return view('components.ourmenu', compact(
-            'specialdishsection',
-            'specialdishcomponent',
-            'appetizersection',
-            'appetizercomponent',
-            'dinnersection',
-            'dinnercomponent',
-            'bakerysection',
-            'bakerycomponent',
-            'dessertsection',
-            'dessertcomponent',
-            'coffeesection',
-            'coffeecomponent',
-            'maincoursesection',
-            'maincoursecomponent',
-            'fishsection',
-            'fishcomponent',
-            'grillsection',
-            'grillcomponent',
-            'specialsection',
-            'specialcomponent',
-            'beveragesection',
-            'beveragecomponent'
-        ));
-    }
-
-    public function itemdetails($id)
-    {
-        $itemdetails = DB::table("components")->where("_status", 1)->where("id", $id)->first();
-
-        return view('components.itemdetails', compact('itemdetails'));
-    }
-
     public function gallery()
     {
         $allgalleryimage = DB::table("images")->orderBy('created_at', 'desc')->get();
@@ -159,14 +91,14 @@ class HomepageController extends Controller
         return view('components.registration');
     }
 
-    public function cart()
-    {
-        return view('components.cart');
-    }
-
     public function checkout()
     {
         return view('components.checkout');
+    }
+
+    public function contact()
+    {
+        return view('components.contact');
     }
 
     public function messagesubmit(Request $request)

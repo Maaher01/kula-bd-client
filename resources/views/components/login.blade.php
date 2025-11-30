@@ -6,12 +6,6 @@
         <h2 class="title">Log In</h2>
         <p class="subtitle">Welcome back! Please login to continue.</p>
 
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-
         @if($errors->any() && !$errors->has('email') && !$errors->has('password'))
         <div class="alert alert-danger">
             {{ $errors->first() }}
