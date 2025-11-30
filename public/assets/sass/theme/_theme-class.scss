@@ -1,0 +1,121 @@
+/*-------------------------
+    2.1 Theme Classes
+-------------------------*/
+// border radius
+.border-radius-50 {
+  border-radius: 50px !important;
+}
+.border-radius-25 {
+  border-radius: 25px !important;
+}
+.border-radius-16 {
+  border-radius: 16px !important;
+}
+.border-radius-12 {
+  border-radius: 12px !important;
+}
+.border-radius-10 {
+  border-radius: 10px !important;
+}
+.border-radius-6 {
+  border-radius: 6px !important;
+}
+
+// color
+.text-primary-color {
+  color: var(--primary-color);
+}
+// background color
+
+// bg style
+.common-bg-style {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// .owl-theme .owl-dots .owl-dot span
+.owl-theme .owl-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  .owl-dot {
+    &.active {
+      span {
+        background: var(--white-color) !important;
+        &::after {
+          border: 1px solid var(--white-color);
+        }
+      }
+    }
+    span {
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.1) !important;
+      position: relative;
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48%, -53%);
+      }
+    }
+  }
+}
+
+// font sizes
+.fz-18 {
+  font-size: var(--fz-18);
+}
+
+// width
+.max-w-337 {
+  max-width: 337px;
+  width: 100%;
+}
+
+// height
+.max-h-358 {
+  max-height: 358px;
+  height: 100%;
+}
+
+.reveal-img {
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform-origin: left;
+  }
+}
+
+.heading-primary-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 58px;
+    height: 2px;
+    flex-shrink: 0;
+    background-color: var(--primary-color);
+  }
+}
+.dropdown-item:hover,
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--text-color);
+  text-decoration: none;
+  background-color: var(--primary-color);
+}

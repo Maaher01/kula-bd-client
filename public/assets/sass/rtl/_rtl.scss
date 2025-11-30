@@ -1,0 +1,540 @@
+/*-------------------------
+    3.1 RTL Styles
+-------------------------*/
+.rtl-enabled {
+  direction: rtl;
+  text-align: right;
+
+  /*---------
+theme color switcher
+-----------*/
+  .theme-color-switch .direction-wraper {
+    .direction-btn.ltr {
+      background-color: #e4e4e4;
+    }
+    .direction-btn.rtl {
+      background-color: var(--primary-color);
+    }
+  }
+  /*---------
+header 1
+-----------*/
+  .roister-header-area-1 {
+    .header-btm {
+      .positioned-logo {
+        left: initial;
+        right: 0;
+      }
+      .sidebar-toggle-btn {
+        right: initial;
+        left: 0px;
+      }
+
+      .right-side {
+        @include screen-1600 {
+          margin-right: initial;
+          margin-left: calc(127px + 30px);
+        }
+
+        @include screen-1400 {
+          margin-right: initial;
+          margin-left: calc(100px + 30px);
+        }
+        @include screen-576 {
+          margin-right: initial;
+          margin-left: 70px;
+        }
+      }
+      .phone-wraper {
+        &::after {
+          left: initial;
+          right: 0;
+        }
+      }
+
+      .cart-btn {
+        .cart-counter {
+          right: initial;
+          left: -8px;
+        }
+      }
+    }
+  }
+  /*---------
+mobile menu
+-----------*/
+  .roister-mobile-menu-offcanvas {
+    .mobile-menu {
+      ul {
+        li {
+          .submenu {
+            margin-left: initial;
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+  /*---------
+hero section
+-----------*/
+  .roister-hero-section {
+    .hero-shape-1 {
+      left: initial;
+      right: 0;
+      transform: translateY(-50%) scaleX(-1);
+    }
+    .hero-shape-2 {
+      left: initial;
+      right: 9%;
+    }
+    .hero-shape-3 {
+      left: initial;
+      right: 5%;
+    }
+
+    .hero-contents {
+      .subtitle {
+        svg {
+          margin-right: initial;
+          margin-left: 30px;
+          @include screen-768 {
+            margin-right: initial;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .hero-main-img {
+      right: initial;
+      left: 127px;
+      transform: translateY(-50%) scaleX(-1);
+
+      @include screen-1400 {
+        right: initial;
+        left: 100px;
+      }
+
+      @include screen-992 {
+        right: initial;
+        left: 0;
+      }
+    }
+
+    .book-table-content {
+      right: initial;
+      left: 0;
+
+      .title {
+        .left-arrow {
+          left: initial;
+          right: -150px;
+        }
+
+        .right-arrow {
+          right: initial;
+          left: -150px;
+        }
+      }
+    }
+  }
+
+  /*---------
+about section 
+-----------*/
+  .roister-about-section {
+    .about-shape {
+      right: initial;
+      left: 0;
+      transform: translateY(-50%) scaleX(-1);
+      @include screen-1800 {
+        right: initial;
+        left: -50px;
+      }
+    }
+
+    .contents-wraper {
+      .about-img-1 {
+        right: inherit;
+        left: 0;
+      }
+    }
+  }
+
+  /*---------
+best dishes section 
+-----------*/
+  .roister-best-dishes-section {
+    .shape-1 {
+      left: initial;
+      right: 0;
+    }
+    .shape-2 {
+      right: initial;
+      left: -35px;
+      transform: scaleX(-1);
+    }
+    .shape-3 {
+      left: initial;
+      right: 0;
+      transform: scaleX(-1);
+    }
+    .shape-4 {
+      right: initial;
+      left: 0px;
+      transform: scaleX(-1);
+    }
+  }
+
+  /*---------
+roister-newsletter-area 
+-----------*/
+  .roister-newsletter-area {
+    .main-news-letter-card {
+      .form-wraper {
+        .primary-btn {
+          right: 8px;
+        }
+      }
+    }
+  }
+
+  /*---------
+roister-team-section
+-----------*/
+  .roister-team-section {
+    .shape-1 {
+      left: initial;
+      right: 0;
+      transform: scaleX(-1);
+    }
+    .shape-2 {
+      right: initial;
+      left: 0;
+      transform: scaleX(-1);
+    }
+  }
+
+  /*---------
+roister-home-faq-section
+-----------*/
+  .roister-home-faq-section {
+    .faq-shape1 {
+      left: initial;
+      right: 0;
+      transform: scaleX(-1);
+
+      @include screen-1400 {
+        left: initial;
+        right: -60px;
+      }
+    }
+    .faq-shape2 {
+      right: initial;
+      left: 0;
+      transform: scaleX(-1);
+    }
+  }
+
+  /*---------
+roister-ticker-wraper
+-----------*/
+  .roister-ticker-wraper {
+    .hero-carousel-wraper {
+      &.left-ticker,
+      &.right-ticker {
+        direction: ltr;
+      }
+    }
+  }
+
+  /*---------
+roister-testimonial-section
+-----------*/
+  .roister-testimonial-section {
+    .shape-1 {
+      left: initial;
+      right: 0;
+      transform: scaleX(-1);
+
+      @include screen-768 {
+        left: initial;
+        right: -30px;
+      }
+    }
+    .shape-2 {
+      right: initial;
+      left: 0;
+      transform: scaleX(-1);
+
+      @include screen-768 {
+        right: initial;
+        left: -30px;
+      }
+    }
+  }
+
+  /*---------
+roister-photo-gallery-section
+-----------*/
+  .roister-photo-gallery-section {
+    .contents-wraper {
+      padding-right: initial;
+      padding-left: 64px;
+      @include screen-1400 {
+        padding-right: initial;
+        padding-left: 24px;
+      }
+      @include screen-992 {
+        padding-right: initial;
+        padding-left: initial;
+      }
+    }
+
+    .slider-col {
+      right: initial;
+      left: 0;
+
+      .owl-stage {
+        padding-left: initial !important;
+        padding-right: 0px !important;
+      }
+    }
+  }
+
+  /*-------------------------
+    3.3 Footer
+-------------------------*/
+  .roister-footer-1 {
+    .footer-img1 {
+      left: initial;
+      right: -1%;
+      transform: scaleX(-1);
+    }
+    .footer-img2 {
+      right: initial;
+      left: 10%;
+      transform: scaleX(-1);
+
+      @include screen-1920 {
+        right: initial;
+        left: 2%;
+      }
+      @include screen-1600 {
+        right: initial;
+        left: -1%;
+      }
+      @include screen-1200 {
+        right: initial;
+        left: -6%;
+      }
+    }
+
+    .border-right {
+      border-right: initial;
+      border-left: 1px solid var(--white-color);
+      @include screen-768 {
+        border-right: none;
+        border-left: none;
+      }
+    }
+  }
+
+  /*-------------------------
+   6.1 Home Page 2
+-------------------------*/
+
+  /*---------
+roister-hm2-upcoming-event-section
+-----------*/
+  .roister-hm2-upcoming-event-section {
+    .shape-1 {
+      right: initial;
+      left: -35px;
+      transform: scaleX(-1);
+    }
+
+    .left-side {
+      .vdo-icon-wraper {
+        left: initial;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+    .right-side {
+      padding-left: initial;
+      padding-right: 66px;
+
+      .right-img {
+        left: initial;
+        right: 0;
+      }
+
+      .events-wraper {
+        .single-event-wraper {
+          .event-left-side {
+            .date {
+              left: initial;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // lightgallery
+  #lg-backdrop-1 {
+    direction: ltr;
+  }
+  #lg-outer-1 {
+    direction: ltr;
+  }
+
+  /*---------
+roister-single-team
+-----------*/
+  .roister-single-team {
+    .img-wraper {
+      .social-wraper {
+        right: initial;
+        left: 0;
+      }
+    }
+
+    .content-wraper {
+      padding-right: initial;
+      padding-left: 45px;
+
+      .show-social-btn {
+        right: initial;
+        left: 0;
+      }
+    }
+  }
+
+  // .roister-blog-search-widget
+  .roister-blog-search-widget {
+    .input {
+      border-radius: 0px 4px 4px 0px;
+    }
+    .submit-btn {
+      border-radius: 4px 0px 0px 4px;
+    }
+  }
+
+  .blog-common-sidebar-widget-style {
+    .heading-title {
+      &::after {
+        left: initial;
+        right: 0;
+      }
+    }
+  }
+
+  .heading-primary-underline::after {
+    left: initial;
+    right: 0;
+  }
+
+  .single-blog-quote .quote-by {
+    padding-left: initial;
+    padding-right: 54px;
+    &::before {
+      left: initial;
+      right: 0;
+    }
+  }
+  .review-content .filter-sort-container .label {
+    margin-right: initial;
+    margin-left: 8px;
+  }
+
+  .roister-header-searchbar-form .offcanvas-body .search-input {
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  .roister-header-searchbar-form .offcanvas-body .submit-btn {
+    border-radius: 8px 0px 0px 8px;
+  }
+
+  // template-btn
+  .template-btn {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  // roister-home1-accordion
+  .roister-home1-accordion {
+    .faq-item {
+      .title {
+        padding: 15px 30px 15px 56px;
+
+        &::before {
+          right: initial;
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  /*---------
+roister-single-testimonial
+-----------*/
+  .roister-single-testimonial {
+    .img-wraper {
+      &::after {
+        left: initial;
+        right: -80px;
+      }
+
+      @include screen-1600 {
+        &::after {
+          left: initial;
+          right: -20px;
+        }
+      }
+
+      @include screen-576 {
+        margin-left: initial;
+        margin-right: 20px;
+      }
+    }
+
+    .btm-wraper {
+      .quote-icon {
+        margin-right: initial;
+        margin-left: 30px;
+
+        @include screen-1600 {
+          margin-right: initial;
+          margin-left: 16px;
+        }
+        @include screen-576 {
+          margin-right: initial;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  /*---------
+roister-team-section
+-----------*/
+  .roister-team-section {
+    .shape-2 {
+      -webkit-animation: bounce_rtl_img 3s infinite ease-in-out;
+      -o-animation: bounce_rtl_img 3s infinite ease-in-out;
+      -ms-animation: bounce_rtl_img 3s infinite ease-in-out;
+      -moz-animation: bounce_rtl_img 3s infinite ease-in-out;
+      animation: bounce_rtl_img 3s infinite ease-in-out;
+    }
+  }
+  .roister-single-hm2-gallery .content-wraper .linkto i {
+    transform: rotate(180deg);
+  }
+
+  // end here
+}

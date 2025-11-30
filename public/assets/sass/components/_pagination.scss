@@ -1,0 +1,31 @@
+/*-------------------------
+   4.9 Pagination
+-------------------------*/
+.pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  li {
+    a {
+      width: 41px;
+      height: 41px;
+      flex-shrink: 0;
+      background-color: var(--dark-color);
+      border-radius: 25px;
+      border: 1px solid var(--border-color-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-color);
+      transition: var(--transition);
+      &.active,
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--text-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,692 @@
+/*-------------------------
+    5.1 General Cards
+-------------------------*/
+
+// roister-single-dish
+.roister-single-dish {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .img-wraper {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 364px;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background: var(--white-color);
+            transform-origin: 50%;
+            transition-property: transform;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            transition: 0.5s;
+        }
+        @include screen-1400 {
+            height: 324px;
+        }
+        @include screen-1200 {
+            height: 300px;
+        }
+        @include screen-992 {
+            height: 280px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+    }
+
+    .content-wraper {
+        background-color: var(--bg-black-shade-2);
+        padding: 40px 16px;
+        .top-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+
+            .title {
+                a {
+                    color: var(--white-color);
+                    transition: var(--transition);
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+        .btm-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+
+            .rating-wraper {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                i {
+                    color: var(--primary-color);
+                }
+            }
+
+            .price {
+                color: var(--white-color);
+            }
+        }
+    }
+    &:hover {
+        .img-wraper {
+            &::before {
+                transform: scaleY(0);
+                opacity: 0.1;
+            }
+            &::after {
+                transform: scaleX(0);
+                opacity: 0.1;
+            }
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+// roister-single-team
+.roister-single-team {
+    .img-wraper {
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        height: 437px;
+        overflow: hidden;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background: var(--white-color);
+            transform-origin: 50%;
+            transition-property: transform;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            transition: 0.5s;
+        }
+        @include screen-1400 {
+            height: 350px;
+        }
+        @include screen-1200 {
+            height: 320px;
+        }
+        @include screen-992 {
+            height: 280px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .social-wraper {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 74px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-shrink: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+
+            a {
+                width: 45px;
+                height: 45px;
+                flex-shrink: 0;
+                border-radius: 50%;
+                border: 1px solid var(--white-color);
+                color: var(--white-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                &:hover {
+                    background-color: var(--white-color);
+                    color: var(--dark-color);
+                }
+            }
+        }
+    }
+
+    .content-wraper {
+        position: relative;
+        padding-right: 45px;
+        .name {
+            color: var(--white-color);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+            a {
+                color: var(--white-color);
+                transition: var(--transition);
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        .desig {
+            color: var(--primary-color);
+            font-family: var(--body-font);
+            font-size: var(--fz-16);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+        }
+
+        .show-social-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            flex-shrink: 0;
+
+            i.fa-minus {
+                display: none;
+            }
+        }
+    }
+
+    &.show-social {
+        .img-wraper {
+            .social-wraper {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .content-wraper {
+            .show-social-btn {
+                i.fa-minus {
+                    display: inline-block;
+                }
+                i.fa-plus {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .img-wraper {
+            &::before {
+                transform: scaleY(0);
+                opacity: 0.1;
+            }
+            &::after {
+                transform: scaleX(0);
+                opacity: 0.1;
+            }
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+// roister-single-testimonial
+.roister-single-testimonial {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+
+    @include screen-1600 {
+        gap: 40px;
+    }
+    @include screen-768 {
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .img-wraper {
+        width: 270px;
+        height: 270px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            left: -80px;
+            top: 0;
+            display: block;
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        @include screen-1600 {
+            width: 170px;
+            height: 170px;
+            &::after {
+                width: 170px;
+                height: 170px;
+                left: -20px;
+            }
+
+            img {
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+        @include screen-576 {
+            margin-left: 20px;
+        }
+    }
+
+    .des {
+        color: var(--white-color);
+        font-size: var(--fz-30);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 133.333%;
+    }
+
+    .btm-wraper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        @include screen-576 {
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .quote-icon {
+            margin-right: 30px;
+            @include screen-1600 {
+                width: 33px;
+                height: 26px;
+            }
+            @include screen-1600 {
+                margin-right: 16px;
+            }
+            @include screen-576 {
+                margin-right: 8px;
+            }
+            path {
+                fill: var(--primary-color);
+            }
+        }
+
+        .feedback-name {
+            color: var(--white-color);
+            font-size: var(--fz-20);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 136.364%;
+            letter-spacing: 1.1px;
+
+            span {
+                color: var(--primary-color);
+                font-size: var(--fz-18);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+        .rating-wraper {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            i {
+                color: var(--primary-color);
+                font-size: var(--fz-16);
+                font-style: normal;
+                font-weight: 900;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+// roister-single-gallery
+.roister-single-gallery {
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid rgba(220, 202, 135, 0.2);
+        background: linear-gradient(
+            208deg,
+            rgba(0, 0, 0, 0.75) 1.5%,
+            rgba(0, 0, 0, 0.64) 98.62%
+        );
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .gallery-trigger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        color: var(--white-color);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    &:hover {
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        .gallery-trigger {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+// roister-single-category
+.roister-single-category {
+    width: 100%;
+    height: 436px;
+    flex-shrink: 0;
+    aspect-ratio: 159/218;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        background: var(--white-color);
+        transform-origin: 90%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        transition: 0.5s;
+    }
+
+    .title {
+        position: absolute;
+        left: 0;
+        bottom: 42px;
+        display: inline-block;
+        padding: 12px 42px;
+        border-radius: 0px 30px 30px 0px;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-family: var(--heading-font);
+        font-size: var(--fz-24);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+    &:hover {
+        &::before {
+            transform: scaleY(0);
+            opacity: 0.1;
+        }
+        &::after {
+            transform: scaleX(0);
+            opacity: 0.1;
+        }
+        img {
+            transform: scale(1.08);
+        }
+    }
+}
+
+// roister-single-counter
+.roister-single-counter {
+    text-align: center;
+    .title {
+        color: var(--text-color);
+        text-align: center;
+        font-family: var(--heading-font);
+        font-size: var(--fz-90);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -1.92px;
+    }
+
+    .des {
+        color: var(--text-color);
+        font-family: var(--body-font);
+        font-size: var(--fz-18);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 177.778%;
+        letter-spacing: -0.36px;
+    }
+}
+
+// roister-single-hm2-gallery
+.roister-single-hm2-gallery {
+    height: 588px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    @include screen-992 {
+        height: 488px;
+    }
+    .thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+    .content-wraper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1.7px);
+        padding: 46px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+        @include screen-992 {
+            padding: 24px;
+        }
+        .title {
+            color: var(--white-color);
+            a {
+                color: var(--white-color);
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        .des {
+            color: var(--white-color);
+            font-family: var(--body-font);
+            font-size: var(--fz-16);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .linkto {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 1px solid var(--white-color);
+            color: var(--white-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            @include screen-992 {
+                width: 35px;
+                height: 35px;
+            }
+            &:hover {
+                border-color: var(--primary-color);
+                background-color: var(--dark-color);
+                color: var(--primary-color);
+                box-shadow: 3px 6px 16px -6px var(--primary-color);
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .thumb {
+            transform: scale(1.1);
+        }
+        .content-wraper {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+// roister-single-hm2-testimonial
+.roister-single-hm2-testimonial {
+    border-radius: 5px;
+    border: 1px dashed var(--primary-color);
+    padding: 50px 60px;
+    position: relative;
+    @include screen-1400 {
+        padding: 30px 24px;
+    }
+    .shape1 {
+        position: absolute;
+        right: 60px;
+        bottom: 67px;
+        z-index: -1;
+    }
+    .top-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .user-box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .img-wraper {
+            img {
+                width: 85px;
+                height: 85px;
+                flex-shrink: 0;
+                border-radius: 50%;
+                border: 1px solid var(--primary-color);
+            }
+        }
+
+        .user-content {
+            .name {
+                text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+                color: var(--white-color);
+            }
+            .desig {
+                color: var(--white-color);
+                font-family: var(--body-font);
+                font-size: var(--fz-16);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 212.5%;
+            }
+        }
+    }
+    .rating-wraper i {
+        color: var(--primary-color);
+        font-size: var(--fz-16);
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+    p {
+        color: var(--white-color);
+    }
+}

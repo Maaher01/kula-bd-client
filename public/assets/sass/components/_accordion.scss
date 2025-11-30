@@ -1,0 +1,73 @@
+/*-------------------------
+   4.7 Accordion
+-------------------------*/
+
+// roister-home1-accordion
+.roister-home1-accordion {
+  position: relative;
+  z-index: 1;
+  .faq-item {
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    border: 1px solid var(--primary-color);
+    //  padding: 14px 24px;
+    border-radius: 30px;
+    background: var(--bg-black-shade-2);
+    transition: var(--transition);
+
+    &:not(&:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &:has(.accordion-collapse.show) {
+      .title {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        &::after {
+          content: initial;
+        }
+
+        &::before {
+          content: "\f106";
+        }
+      }
+    }
+
+    .title {
+      padding: 15px 56px 15px 30px;
+      color: var(--white-color);
+      font-family: var(--heading-font);
+      font-size: var(--fz-20);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: -0.4px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      text-decoration: none;
+      text-underline-offset: 6px;
+
+      &::after {
+        content: initial;
+      }
+      &::before {
+        content: "\f107";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+      }
+    }
+
+    .des {
+      padding: 20px 30px;
+      // margin-top: 24px;
+      color: var(--white-color);
+    }
+  }
+}

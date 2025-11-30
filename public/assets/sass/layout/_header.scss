@@ -1,0 +1,305 @@
+/*-------------------------
+    3.1 Header
+-------------------------*/
+.roister-header-area-1 {
+    .header-top {
+        background-color: var(--bg-black-shade-1);
+        @include screen-992 {
+            padding: 12px 0px;
+        }
+
+        .left-side {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @include screen-1200 {
+                gap: 20px;
+            }
+        }
+
+        .right-side {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 30px;
+            @include screen-1200 {
+                gap: 20px;
+            }
+
+            .header-info-txt {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--white-color);
+                font-size: var(--fz-14);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 160%;
+
+                a {
+                    color: var(--white-color);
+                    font-weight: 500;
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .header-btm {
+        position: relative;
+
+        .positioned-logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            width: 285px;
+            height: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include screen-1600 {
+                width: 260px;
+            }
+            @include screen-1400 {
+                width: 220px;
+                height: 80px;
+            }
+            @include screen-992 {
+                width: 180px;
+                height: 70px;
+            }
+            @include screen-576 {
+                width: 120px;
+                height: 60px;
+            }
+
+            .header-logo {
+                width: 220px;
+                height: 59px;
+                flex-shrink: 0;
+                @include screen-1600 {
+                    width: 200px;
+                    height: 50px;
+                }
+                @include screen-1400 {
+                    width: 180px;
+                }
+                @include screen-992 {
+                    width: 140px;
+                    height: 30px;
+                }
+                @include screen-576 {
+                    width: 100px;
+                    height: 26px;
+                }
+            }
+        }
+        .sidebar-toggle-btn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 127px;
+            height: 100px;
+            flex-shrink: 0;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include screen-1400 {
+                width: 100px;
+                height: 80px;
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            @include screen-992 {
+                width: 70px;
+                height: 70px;
+
+                svg {
+                    width: 30px;
+                    height: 40px;
+                }
+            }
+            @include screen-576 {
+                width: 60px;
+                height: 60px;
+
+                svg {
+                    width: 26px;
+                    height: 35px;
+                }
+            }
+        }
+        .inner-menu-wraper {
+            display: flex;
+            justify-content: center;
+            @include screen-1700 {
+                justify-content: flex-end;
+            }
+        }
+        .right-side {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 30px;
+            @include screen-1600 {
+                margin-right: calc(127px + 30px);
+            }
+
+            @include screen-1400 {
+                margin-right: calc(100px + 30px);
+            }
+            @include screen-576 {
+                margin-right: 70px;
+                gap: 10px;
+            }
+            @include screen-992 {
+                padding: 19px 0;
+            }
+            @include screen-576 {
+                padding: 14px 0;
+            }
+        }
+        .phone-wraper {
+            position: relative;
+            padding: 6px 20px 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @include screen-1600 {
+                display: none;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                width: 1px;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.5);
+            }
+            .icon-wraper {
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+
+            .content-wraper {
+                .txt {
+                    color: var(--white-color);
+                    font-family: var(--body-font);
+                    font-size: var(--fz-14);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    display: block;
+                    margin-bottom: 4px;
+                }
+                a {
+                    @extend .txt;
+                    font-size: var(--fz-16);
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+        .search-btn {
+            svg {
+                width: 35px;
+                height: 35px;
+                flex-shrink: 0;
+                path {
+                    transition: var(--transition);
+                }
+            }
+            @include screen-1400 {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+        }
+        .cart-btn {
+            position: relative;
+            .cart-counter {
+                position: absolute;
+                top: -12px;
+                right: -8px;
+                width: 28px;
+                height: 28px;
+                flex-shrink: 0;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--primary-color);
+                color: var(--white-color);
+                font-family: var(--body-font);
+                font-size: var(--fz-16);
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            svg {
+                width: 36px;
+                height: 36px;
+                flex-shrink: 0;
+                path {
+                    transition: var(--transition);
+                }
+            }
+            @include screen-1400 {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// sticky header
+.roister-header {
+    transition: var(--transition);
+    z-index: 99;
+    .header-btm {
+        transition: var(--transition);
+    }
+    &.sticky-header {
+        .header-btm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-black-shade-1);
+            z-index: 99;
+        }
+    }
+}

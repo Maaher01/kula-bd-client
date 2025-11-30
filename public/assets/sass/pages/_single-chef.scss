@@ -1,0 +1,44 @@
+/*---------
+6.5 Single Chef
+-----------*/
+
+// roister-chef-intro-section
+.roister-chef-intro-section {
+  .main-img {
+    border: 1px solid var(--primary-color);
+  }
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: var(--fz-16);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 175%;
+      letter-spacing: 0.64px;
+      text-transform: capitalize;
+      &:not(&:last-child) {
+        margin-bottom: 24px;
+        @include screen-768 {
+          margin-bottom: 16px;
+        }
+      }
+      span {
+        color: var(--white-color);
+        svg {
+          line {
+            stroke: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  .signature {
+    max-width: 319px;
+    width: 100%;
+    height: 83px;
+    object-fit: contain;
+  }
+}

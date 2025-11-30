@@ -1,0 +1,878 @@
+/*-------------------------
+   6.1 Home Page 1
+-------------------------*/
+/*---------
+hero section 
+-----------*/
+.roister-hero-section {
+    position: relative;
+    padding-top: 217px;
+    padding-bottom: 217px;
+    overflow: hidden;
+
+    @include screen-1600 {
+        padding-top: 135px;
+    }
+    @include screen-768 {
+        padding-top: 100px;
+        padding-bottom: 170px;
+    }
+
+    .hero-shape-1 {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+        width: 214px;
+        @include screen-1920 {
+            width: 123px;
+        }
+        @include screen-992 {
+            display: none;
+        }
+    }
+    .hero-shape-2 {
+        position: absolute;
+        left: 9%;
+        top: 50%;
+
+        width: 100px;
+        @include screen-1920 {
+            width: 70px;
+        }
+        @include screen-992 {
+            display: none;
+        }
+    }
+    .hero-shape-3 {
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        width: 100px;
+        @include screen-1920 {
+            width: 70px;
+        }
+        @include screen-992 {
+            display: none;
+        }
+    }
+
+    .hero-contents {
+        position: relative;
+        z-index: 2;
+        .subtitle {
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+            font-size: var(--fz-24);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 133.333%;
+            text-transform: capitalize;
+            position: relative;
+
+            svg {
+                fill: var(--primary-color);
+                margin-right: 30px;
+                @include screen-768 {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .title {
+            color: var(--white-color);
+            font-family: var(--heading-font);
+            font-size: var(--fz-90);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 133.333%;
+        }
+
+        .btn-wraper {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            @include screen-576 {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+
+        .trip-info-wraper {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            .icon-wraper {
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background-color: var(--primary-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    flex-shrink: 0;
+                }
+            }
+            .content-wraper {
+                .trip-title,
+                .trip-des {
+                    color: var(--white-color);
+                    font-family: var(--heading-font);
+                    line-height: normal;
+                    font-style: normal;
+                }
+
+                .trip-title {
+                    font-size: var(--fz-18);
+                    font-weight: 500;
+                }
+                .trip-des {
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .hero-main-img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 127px;
+        width: 798px;
+        object-fit: contain;
+        @include screen-1920 {
+            width: 621px;
+        }
+        @include screen-1600 {
+            width: 540px;
+        }
+        @include screen-1400 {
+            width: 500px;
+            right: 100px;
+        }
+        @include screen-1200 {
+            width: 366px;
+        }
+        @include screen-992 {
+            width: 280px;
+            right: 0;
+            top: initial;
+            bottom: 70px;
+            transform: initial;
+        }
+        @include screen-768 {
+            opacity: 0.5;
+        }
+    }
+
+    .book-table-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 127px;
+        height: 100%;
+        flex-shrink: 0;
+        background: var(--bg-black-shade-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        .title {
+            transform: rotate(90deg);
+            color: var(--white-color);
+            text-align: center;
+            font-family: var(--heading-font);
+            font-size: var(--fz-30);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 4.5px;
+            word-wrap: normal;
+            text-wrap-mode: nowrap;
+            position: relative;
+
+            .left-arrow,
+            .right-arrow {
+                position: absolute;
+                transform: rotate(90deg);
+            }
+
+            .left-arrow {
+                left: -150px;
+                top: -53px;
+            }
+
+            .right-arrow {
+                right: -150px;
+                bottom: -53px;
+            }
+        }
+
+        @include screen-1400 {
+            width: 100px;
+        }
+        @include screen-992 {
+            top: initial;
+            bottom: 0;
+            height: 70px;
+            width: 100%;
+            .title {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.92px;
+    text-transform: capitalize;
+}
+.section-title {
+    color: var(--white-color);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 1.92px;
+    text-transform: capitalize;
+    span {
+        color: var(--primary-color);
+    }
+}
+
+/*---------
+about section 
+-----------*/
+.roister-about-section {
+    @extend .common-bg-style;
+    position: relative;
+    overflow: hidden;
+    .about-shape {
+        width: 244px;
+        flex-shrink: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        @include screen-1800 {
+            width: 220px;
+            right: -50px;
+        }
+        @include screen-1600 {
+            display: none;
+        }
+    }
+    .main-img {
+        width: 580px;
+        height: 770px;
+        flex-shrink: 0;
+        aspect-ratio: 580/770;
+        @include screen-992 {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+    .contents-wraper {
+        position: relative;
+        .about-img-1 {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            width: 172px;
+            height: 169px;
+            flex-shrink: 0;
+            aspect-ratio: 172 / 169;
+            z-index: 1;
+            @include screen-1400 {
+                width: 152px;
+                height: 149px;
+                aspect-ratio: 152/149;
+            }
+            @include screen-1200 {
+                top: 45%;
+                width: 102px;
+                height: 99px;
+                aspect-ratio: 102/99;
+            }
+        }
+        .about-img-2 {
+            width: 634px;
+            height: 325px;
+            flex-shrink: 0;
+            aspect-ratio: 634/325;
+            @include screen-1400 {
+                height: 352px;
+                aspect-ratio: 634/352;
+            }
+            @include screen-1200 {
+                height: 287px;
+                aspect-ratio: 634/287;
+            }
+        }
+    }
+}
+/*---------
+roister-banner-section
+-----------*/
+.roister-banner-section {
+    transition: var(--transition);
+    // transform: scale(0.9);
+}
+
+/*---------
+best dishes section 
+-----------*/
+.roister-best-dishes-section {
+    position: relative;
+    overflow: hidden;
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-4 {
+        position: absolute;
+        z-index: -1;
+        @include screen-768 {
+            display: none;
+        }
+    }
+    .shape-1 {
+        width: 335px;
+        top: -13%;
+        left: 0;
+    }
+    .shape-2 {
+        width: 221px;
+        top: 6%;
+        right: -35px;
+    }
+    .shape-3 {
+        width: 189px;
+        bottom: 0;
+        left: 0;
+    }
+    .shape-4 {
+        width: 221px;
+        bottom: 0;
+        right: 0px;
+    }
+}
+
+/*---------
+roister-newsletter-area 
+-----------*/
+.roister-newsletter-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include screen-1400 {
+        gap: 24px;
+    }
+    @include screen-992 {
+        flex-wrap: wrap;
+    }
+
+    .cta-card {
+        width: 30%;
+        height: 577px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--bg-black-shade-2);
+        @include screen-1400 {
+            width: 33.33%;
+        }
+        @include screen-992 {
+            width: calc(50% - 12px);
+        }
+        @include screen-768 {
+            width: 100%;
+            height: initial;
+        }
+        .news-letter-img {
+            max-width: 365px;
+            max-height: 386px;
+            flex-shrink: 0;
+        }
+    }
+
+    .cta-calling-card {
+        background-color: var(--primary-color);
+        width: 28%;
+        height: 577px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @include screen-1400 {
+            width: 33.33%;
+        }
+        @include screen-992 {
+            width: calc(50% - 12px);
+        }
+        @include screen-768 {
+            padding: 40px;
+            width: 100%;
+            height: initial;
+        }
+        .title {
+            color: var(--white-color);
+            text-align: center;
+            font-family: var(--heading-font);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            max-width: 329px;
+        }
+        .subtitle {
+            color: var(--white-color);
+            text-align: center;
+            font-family: var(--nothing-font);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+    }
+
+    .main-news-letter-card {
+        padding: 50px 50px;
+        width: 42%;
+        background-color: var(--bg-black-shade-2);
+        height: 577px;
+        @include screen-1400 {
+            width: 33.33%;
+        }
+        @include screen-1200 {
+            padding: 24px;
+        }
+        @include screen-992 {
+            width: 100%;
+            height: initial;
+        }
+        .main-img {
+            border-radius: 8px;
+            height: 370px;
+            @include screen-1600 {
+                height: 300px;
+            }
+        }
+
+        .btm-area {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+            @include screen-1600 {
+                flex-wrap: wrap;
+            }
+            .title {
+                width: 233px;
+                flex-grow: 1;
+            }
+        }
+
+        .form-wraper {
+            position: relative;
+            input {
+                flex-grow: 1;
+                max-width: 426px;
+                height: 54px;
+                flex-shrink: 0;
+                border-radius: 4px;
+                border: 1px solid var(--primary-color);
+                padding: 8px 167px 8px 16px;
+                background-color: var(--bg-black-shade-2);
+                color: var(--white-color);
+                @include screen-1200 {
+                    padding: 8px 100px 8px 16px;
+                }
+                &::placeholder {
+                    color: var(--white-color);
+                }
+            }
+            .primary-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 8px;
+            }
+        }
+    }
+}
+
+/*---------
+roister-team-section
+-----------*/
+.roister-team-section {
+    position: relative;
+    .shape-1 {
+        width: 228px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include screen-1400 {
+            width: 200px;
+        }
+        @include screen-768 {
+            display: none;
+        }
+    }
+    .shape-2 {
+        width: 164px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: -1;
+
+        -webkit-animation: bounce 3s infinite ease-in-out;
+        -o-animation: bounce 3s infinite ease-in-out;
+        -ms-animation: bounce 3s infinite ease-in-out;
+        -moz-animation: bounce 3s infinite ease-in-out;
+        animation: bounce 3s infinite ease-in-out;
+
+        @include screen-1400 {
+            width: 210px;
+        }
+        @include screen-768 {
+            display: none;
+        }
+    }
+}
+
+.roister-banner-slider-wraper {
+    .img-wraper {
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background: var(--white-color);
+            transform-origin: 90%;
+            transition-property: transform;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            transition: 0.5s;
+        }
+        &::before {
+            transform: scaleX(1);
+        }
+
+        &::after {
+            transform: scaleY(1);
+        }
+
+        &:hover {
+            &::before {
+                transform: scaleX(0);
+                opacity: 0.5;
+            }
+            &::after {
+                transform: scaleY(0);
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+/*---------
+roister-home-faq-section
+-----------*/
+.roister-home-faq-section {
+    position: relative;
+    overflow: hidden;
+    .faq-shape1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 238px;
+        z-index: -1;
+        @include screen-1400 {
+            width: 138px;
+            left: -60px;
+        }
+    }
+    .faq-shape2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 238px;
+        z-index: -1;
+        @include screen-1400 {
+            width: 168px;
+        }
+    }
+}
+
+/*---------
+roister-ticker-wraper
+-----------*/
+.roister-ticker-wraper {
+    @extend .common-bg-style;
+    .ticker-wraper {
+        overflow: hidden;
+    }
+
+    .hero-carousel-wraper {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        &.left-ticker {
+            animation: ticker-left 0s linear infinite 0s normal;
+            animation-duration: 200s;
+        }
+        &.right-ticker {
+            animation: ticker-right 0s linear infinite 0s normal;
+            animation-duration: 200s;
+        }
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        .title,
+        .title-2 {
+            font-family: var(--default-font);
+            text-transform: uppercase;
+            font-size: var(--fz-100);
+            line-height: 69%;
+            font-style: normal;
+            padding: 4px;
+        }
+
+        .title {
+            color: var(--white-color);
+            font-weight: 400;
+        }
+        .title-2 {
+            background: transparent;
+            outline: none;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var(--primary-color);
+            font-weight: 700;
+        }
+    }
+}
+
+/*---------
+roister-testimonial-section
+-----------*/
+.roister-testimonial-section {
+    padding-bottom: 200px !important;
+    position: relative;
+    overflow: hidden;
+    .shape-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 238px;
+        flex-shrink: 0;
+        z-index: -1;
+        @include screen-1400 {
+            width: 138px;
+        }
+        @include screen-768 {
+            width: 90px;
+            left: -30px;
+        }
+    }
+    .shape-2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 238px;
+        flex-shrink: 0;
+        z-index: -1;
+        @include screen-1400 {
+            width: 138px;
+        }
+        @include screen-768 {
+            width: 90px;
+            right: -30px;
+        }
+    }
+
+    @include screen-768 {
+        padding-bottom: 180px !important;
+    }
+    .roister-testi-slider-wraper {
+        .roister-single-testimonial {
+            padding: 0px 90px;
+            @include screen-992 {
+                padding: 0px 40px;
+            }
+            @include screen-768 {
+                padding: 0px 20px;
+            }
+        }
+    }
+
+    // .owl-theme .owl-dots .owl-dot span
+    .owl-theme .owl-dots {
+        display: inline-flex;
+        justify-content: center;
+        gap: 8px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -110px;
+        background: var(--white-color);
+        border: 2px dashed var(--primary-color);
+        height: 40px;
+        border-radius: 40px;
+        padding: 0 24px;
+        .owl-dot {
+            &.active {
+                span {
+                    background: var(--primary-color) !important;
+                }
+            }
+            span {
+                width: 15px;
+                height: 15px;
+                background: var(--white-color) !important;
+                border: 2px solid var(--primary-color);
+            }
+        }
+    }
+    // active design
+    .owl-item.active {
+        .roister-single-testimonial {
+            .img-wraper {
+                -webkit-animation: 1.5s zoomIn;
+                animation: 1.5s zoomIn;
+            }
+            .des {
+                -webkit-animation: 1.5s fadeInUp;
+                animation: 1.5s fadeInUp;
+            }
+            .btm-wraper {
+                -webkit-animation: 1.5s fadeInUp;
+                animation: 1.5s fadeInUp;
+            }
+        }
+    }
+}
+
+/*---------
+roister-photo-gallery-section
+-----------*/
+.roister-photo-gallery-section {
+    @extend .common-bg-style;
+    background-attachment: fixed;
+    padding: 215px 0px;
+    overflow: hidden;
+    position: relative;
+
+    @include screen-1800 {
+        padding: 180px 0px;
+    }
+    @include screen-1600 {
+        padding: 120px 0px;
+    }
+    @include screen-1400 {
+        padding: 100px 0px;
+    }
+    @include screen-1200 {
+        padding: 80px 0px;
+    }
+
+    .contents-wraper {
+        padding-right: 64px;
+        @include screen-1400 {
+            padding-right: 24px;
+        }
+        @include screen-992 {
+            padding-right: initial;
+        }
+    }
+
+    .slider-col {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+
+        @include screen-992 {
+            position: initial;
+            transform: initial;
+        }
+
+        .owl-stage {
+            padding-left: 0px !important;
+        }
+    }
+}
+
+/*---------
+roister-blog-section
+-----------*/
+.roister-blog-section {
+    position: relative;
+    overflow: hidden;
+    .shape-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 238px;
+        flex-shrink: 0;
+        z-index: -1;
+        @include screen-1800 {
+            width: 138px;
+        }
+        @include screen-1200 {
+            top: -30px;
+            left: -60px;
+        }
+        @include screen-992 {
+            width: 90px;
+        }
+    }
+    .shape-2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 238px;
+        flex-shrink: 0;
+        z-index: -1;
+        @include screen-1800 {
+            width: 138px;
+        }
+        @include screen-992 {
+            width: 90px;
+            right: -30px;
+        }
+    }
+    .blog-list {
+        .roister-single-blog-2 {
+            &:not(:first-child) {
+                padding-top: 24px;
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+                padding-bottom: 24px;
+            }
+        }
+    }
+}

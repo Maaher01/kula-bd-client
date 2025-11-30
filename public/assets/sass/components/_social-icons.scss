@@ -1,0 +1,23 @@
+/*-------------------------
+  4.13 Social icons
+-------------------------*/
+.header-social-wraper {
+  display: flex;
+  align-items: center;
+  a {
+    padding: 14px 24px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transition: var(--transition);
+    @include screen-1200 {
+      padding: 14px 20px;
+    }
+    @include screen-992 {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+    &:hover {
+      background-color: var(--dark-color);
+    }
+  }
+}

@@ -1,0 +1,104 @@
+/*-------------------------
+    1.2 Variables
+-------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Nothing+You+Could+Do&display=swap");
+
+:root {
+  // font-family
+  --heading-font: "Jost", sans-serif;
+  --body-font: "Jost", sans-serif;
+  --default-font: sans-serif;
+  --nothing-font: "Nothing You Could Do", cursive;
+
+  // colors
+  --primary-color: #f39c12;
+  --text-color: #ffffff;
+  --white-color: #ffffff;
+  --dark-color: #000000;
+  --dark-color-2: #121212;
+
+  --negative-color: #dc3545;
+
+  // bg color
+  --bg-black-shade-1: #111111;
+  --bg-black-shade-2: #191918;
+  --bg-black-shade-3: #141414;
+  --bg-black-shade-4: #111111;
+  
+  // border color
+  --border-color-1: #292929;
+
+  // transition
+  --transition: all 0.5s ease;
+
+  // box shadow
+  --box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
+
+  //default  font-size
+  --fz-100: 100px;
+  --fz-90: 90px;
+  --fz-64: 64px;
+  --fz-48: 48px;
+  --fz-36: 36px;
+  --fz-30: 30px;
+  --fz-24: 24px;
+  --fz-20: 20px;
+  --fz-18: 18px;
+  --fz-16: 16px;
+  --fz-14: 14px;
+  --fz-12: 12px;
+  --fz-10: 10px;
+  --fz-8: 8px;
+}
+
+@include screen-1400 {
+  :root {
+    --fz-100: 85px;
+    --fz-90: 78px;
+    --fz-64: 56px;
+    --fz-48: 42px;
+    --fz-36: 32px;
+    --fz-30: 26px;
+    --fz-24: 22px;
+    --fz-20: 18px;
+    --fz-18: 16px;
+  }
+}
+
+@include screen-1200 {
+  :root {
+    --fz-100: 76px;
+    --fz-90: 68px;
+    --fz-64: 48px;
+    --fz-48: 36px;
+    --fz-36: 28px;
+  }
+}
+
+@include screen-992 {
+  :root {
+    --fz-100: 64px;
+    --fz-90: 56px;
+    --fz-64: 40px;
+    --fz-48: 30px;
+    --fz-36: 26px;
+    --fz-30: 24px;
+    --fz-24: 20px;
+    --fz-20: 18px;
+    --fz-18: 16px;
+    --fz-16: 14px;
+    --fz-14: 12px;
+    --fz-12: 10px;
+    --fz-10: 8px;
+    --fz-8: 6px;
+  }
+}
+
+@include screen-768 {
+  :root {
+    --fz-100: 52px;
+    --fz-90: 44px;
+    --fz-64: 36px;
+  }
+}

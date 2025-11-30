@@ -1,0 +1,113 @@
+/*-------------------------
+  4.4 Select & Dropdown
+-------------------------*/
+/*---------
+header currency selector
+-----------*/
+.roister-header-area-1 {
+  .rs-nice-select {
+    background-color: transparent;
+    height: initial;
+    line-height: 120%;
+    border: none;
+    &.open {
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
+        top: 50%;
+        right: 4px;
+      }
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 6px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M8.73133 0.917894L8.47118 0.638679C8.3893 0.55148 8.28037 0.503441 8.16395 0.503441C8.0476 0.503441 7.93854 0.55148 7.85666 0.638679L4.88901 3.80193L1.91794 0.635169C1.8362 0.54797 1.72714 0.5 1.61078 0.5C1.49443 0.5 1.3853 0.54797 1.30349 0.635169L1.04327 0.912663C0.873841 1.09312 0.873841 1.38706 1.04327 1.56752L4.58069 5.35148C4.66244 5.43861 4.77137 5.5 4.88875 5.5H4.89011C5.00653 5.5 5.11546 5.43854 5.19721 5.35148L8.73133 1.57777C8.8132 1.49064 8.85815 1.37103 8.85827 1.24701C8.85827 1.12292 8.8132 1.00496 8.73133 0.917894Z' fill='white'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+      top: 50%;
+      transform: translateX(-50%);
+      right: -2px;
+      transition: var(--transition);
+    }
+
+    .current {
+      color: var(--white-color);
+      font-family: var(--body-font);
+      font-size: var(--fz-14);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      position: relative;
+      top: 0px;
+      @include screen-1200 {
+        font-size: 14px !important;
+      }
+    }
+  }
+}
+
+/*---------
+header language selector
+-----------*/
+.roister-header-area-1 {
+  .header-top-lang {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .top-lang {
+      color: var(--white-color);
+    }
+
+    .dropdown-menu {
+      min-width: 115px;
+      border-radius: 15px;
+      padding: 10px;
+      border: none;
+      box-shadow: var(--box-shadow);
+    }
+
+    .dropdown-toggle {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 9px;
+        height: 6px;
+        top: 50%;
+        transform: translateX(-50%);
+        right: -2px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6' viewBox='0 0 9 6' fill='none'%3E%3Cpath d='M8.73133 0.917894L8.47118 0.638679C8.3893 0.55148 8.28037 0.503441 8.16395 0.503441C8.0476 0.503441 7.93854 0.55148 7.85666 0.638679L4.88901 3.80193L1.91794 0.635169C1.8362 0.54797 1.72714 0.5 1.61078 0.5C1.49443 0.5 1.3853 0.54797 1.30349 0.635169L1.04327 0.912663C0.873841 1.09312 0.873841 1.38706 1.04327 1.56752L4.58069 5.35148C4.66244 5.43861 4.77137 5.5 4.88875 5.5H4.89011C5.00653 5.5 5.11546 5.43854 5.19721 5.35148L8.73133 1.57777C8.8132 1.49064 8.85815 1.37103 8.85827 1.24701C8.85827 1.12292 8.8132 1.00496 8.73133 0.917894Z' fill='white'/%3E%3C/svg%3E")
+          0% 0% / contain no-repeat;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        transition: var(--transition);
+      }
+      &.show {
+        &::after {
+          transform: translateX(-50%) rotate(180deg);
+        }
+      }
+    }
+
+    .dropdown-item {
+      padding: 2px 5px 2px 5px;
+      color: var(--dark-color);
+      border-radius: 50px;
+    }
+
+    .dropdown-item:hover {
+      background: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+}

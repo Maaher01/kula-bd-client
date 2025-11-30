@@ -1,0 +1,34 @@
+/*-------------------------
+    4.2 Common Styles
+-------------------------*/
+
+// common-cat-list
+.common-cat-list {
+    @include screen-768 {
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+        @include screen-992 {
+          margin-bottom: 16px;
+        }
+      }
+      i {
+        color: var(--primary-color);
+        font-size: 20px;
+      }
+      span {
+        color: var(--white-color, #fff);
+        font-family: var(--body-font);
+        font-size: var(--fz-16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+  }

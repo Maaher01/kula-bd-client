@@ -1,0 +1,33 @@
+/*-------------------------
+   6.3 About Page
+-------------------------*/
+
+// roister-about-vdo-section
+.roister-about-vdo-section {
+  @extend .common-bg-style;
+  background-attachment: fixed;
+  height: 690px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include screen-768 {
+    height: 450px;
+  }
+  .circle-btn {
+    width: 205px;
+    height: 205px;
+    @include screen-1200 {
+      width: 150px;
+      height: 150px;
+    }
+    @include screen-992 {
+      width: 120px;
+      height: 120px;
+    }
+    @include screen-768 {
+      width: 86px;
+      height: 86px;
+    }
+  }
+}

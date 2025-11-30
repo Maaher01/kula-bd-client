@@ -1,0 +1,49 @@
+/*-------------------------
+    1.3 Reset
+-------------------------*/
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background: var(--dark-color);
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+select {
+  outline: none;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}

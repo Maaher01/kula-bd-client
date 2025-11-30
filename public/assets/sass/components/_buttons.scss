@@ -1,0 +1,191 @@
+/*-------------------------
+   4.3 Buttons
+-------------------------*/
+
+.template-btn {
+  height: 45px;
+  padding: 17px 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--heading-font);
+  font-size: var(--fz-18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%;
+  transition: var(--transition);
+  text-transform: capitalize;
+  gap: 7px;
+  border: 1px solid transparent;
+  svg {
+    path {
+      transition: var(--transition);
+    }
+  }
+  @include screen-1600 {
+    padding: 12px 20px;
+  }
+}
+
+.primary-btn {
+  @extend .template-btn;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  &:hover {
+    border-color: var(--primary-color);
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 3px 6px 16px -6px var(--primary-color);
+    svg {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+  }
+}
+.white-btn {
+  @extend .template-btn;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  &:hover {
+    border-color: var(--primary-color);
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 3px 6px 16px -6px var(--primary-color);
+    svg {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+  }
+}
+.outline-primary-btn {
+  @extend .template-btn;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 34px 50px 0px rgba(7, 63, 67, 0.07);
+  color: var(--white-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+}
+.outline-white-btn {
+  @extend .template-btn;
+  background-color: transparent;
+  border-radius: 4px;
+  transform: translateY(-1px);
+  border: 2px solid var(--white-color);
+  color: var(--text-color);
+
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    box-shadow: 3px 6px 16px -6px var(--white-color);
+    svg {
+      path {
+        fill: var(--dark-color);
+      }
+    }
+  }
+}
+
+.circle-icon-btn {
+  width: 45px;
+  height: 45px;
+  transition: var(--transition);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: relative;
+  svg {
+    circle {
+      fill: var(--primary-color);
+      stroke: var(--primary-color);
+    }
+    path {
+      transition: var(--transition);
+      fill: var(--text-color);
+    }
+  }
+}
+
+.mobile-menu-trigger {
+  @extend .circle-icon-btn;
+  i {
+    transform: rotate(0deg);
+  }
+}
+.mobile-menu-close-btn {
+  @extend .mobile-menu-trigger;
+  width: 35px;
+  height: 35px;
+  opacity: 1;
+}
+/*---------
+rtl-switcher-btn
+-----------*/
+.rtl-switcher-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  position: fixed;
+  left: 40px;
+  bottom: 80px;
+  z-index: 99;
+}
+
+.rtl-enabled {
+  .rtl-switcher-btn {
+    background-color: var(--primary-color);
+  }
+}
+
+/*---------
+.scroll-top-btn
+-----------*/
+.scroll-top-btn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 3px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  font-size: 15px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  @include screen-992 {
+    width: 40px;
+    height: 40px;
+  }
+  &.center-align {
+    right: initial;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:hover {
+    border-color: var(--primary-color);
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+    box-shadow: 3px 6px 16px -6px var(--primary-color);
+    svg {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+  }
+}

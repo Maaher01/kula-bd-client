@@ -1,0 +1,58 @@
+/*---------
+6.4 Reservation Page
+-----------*/
+
+// roister-reservation-pg-form
+.roister-reservation-pg-form {
+  position: relative;
+  overflow: hidden;
+  @include screen-576 {
+    padding: 60px 24px;
+  }
+
+  .reservation-form-wraper {
+    padding: 120px 200px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    @include screen-1200 {
+      padding: 120px 160px;
+    }
+    @include screen-992 {
+      padding: 120px 120px;
+    }
+    @include screen-768 {
+      padding: 100px 40px;
+    }
+    @include screen-576 {
+      padding: 40px 0px;
+      //   background-color: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    .input-wraper {
+      .input {
+        padding: 14px 0px;
+        color: var(--white-color);
+        font-family: var(--body-font);
+        font-size: var(--fz-16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        width: 100%;
+        background-color: transparent;
+        border-bottom: 1px dashed var(--white-color);
+        text-transform: capitalize;
+        &::placeholder {
+          color: var(--white-color);
+        }
+      }
+      input[type="date"],
+      input[type="time"] {
+        color-scheme: light dark; /* hints browser to use dark icons if supported */
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+/*-------------------------
+    4.6 Mobile Menu
+-------------------------*/
+.roister-mobile-menu-offcanvas {
+  background-color: var(--bg-black-shade-1);
+  overflow-y: scroll;
+  .offcanvas-body {
+    background-color: var(--bg-black-shade-1);
+  }
+
+  .offcanvas-header {
+    background: #131313;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color-1);
+    .header-logo {
+      width: 150px;
+      height: 50px;
+      object-fit: contain;
+    }
+  }
+
+  .mobile-tab-nav {
+    border-bottom: 1px solid var(--border-color-1);
+    .nav-link {
+      flex-grow: 1;
+      padding: 20px 0px;
+      color: var(--white-color);
+      &.active {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .mobile-menu {
+    ul {
+      li {
+        &:not(:last-child) {
+          a {
+            border-bottom: 1px solid var(--border-color-1);
+          }
+        }
+
+        .submenu {
+          margin-left: 12px;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: var(--white-color);
+          font-size: var(--fz-16);
+          font-weight: 400;
+          padding: 12px 0;
+          &[aria-expanded="true"],
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  // short about us
+  .sidebar-popup-contact {
+    margin-top: 20px;
+  }
+
+  .sidebar-popup-contact h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  .sidebar-popup-contact li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    a {
+      color: var(--white-color);
+    }
+  }
+
+  .sidebar-popup-contact li .icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    color: var(--white-color);
+    background: var(--primary-color);
+    text-align: center;
+    border-radius: 50px;
+  }
+
+  .sidebar-popup-contact li a:hover {
+    color: var(--primary-color);
+  }
+
+  .sidebar-popup-social {
+    margin-top: 25px;
+  }
+
+  .sidebar-popup-social h4 {
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .sidebar-popup-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+    margin-right: 8px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow);
+  }
+
+  .sidebar-popup-social a:hover {
+    background: var(--dark-color);
+  }
+}
