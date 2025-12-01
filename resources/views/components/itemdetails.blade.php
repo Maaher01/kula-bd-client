@@ -41,14 +41,14 @@
                             <li>{!! $product->remarks !!}</li>
                         </ul>
                         <div class="add-to-cart-wraper mb-30 mt-30 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="quantity-wrapper">
-                                <input value="1" class="add-to-cart-input" type="number">
-                                <div class="btns-wraper">
-                                    <button class="qty-btn increase"><i class="fa-solid fa-angle-up"></i></button>
-                                    <button class="qty-btn  decrease"><i class="fa-solid fa-angle-down"></i></button>
+                            <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
+                                @csrf
+                                <div class="">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <input type="hidden" name="quantity" value="1" min="1">
                                 </div>
-                            </div>
-                            <button class="outline-primary-btn" type="button">Add to cart</button>
+                                <button class="outline-primary-btn" type="submit">Add to cart</button>
+                            </form>
                         </div>
                 </div>
             </div>
@@ -86,4 +86,29 @@
     </div>
 </div>
 <!-- product description wraper end -->
+@endsection
+@section('script')
+<script>
+    // Add to Cart
+    $('.add-to-cart-form').on('submit', function(e) {
+        e.preventDefault();
+        let form = $(this);
+        $.ajax({
+            url: form.attr('action'),
+            method: 'POST',
+            data: form.serialize(),
+            success: function(response) {
+                $('#cart-count').text(response.cartCount);
+                toastr.success(response.message);
+            },
+            error: function(xhr) {
+                if (xhr.status === 401) {
+                    window.location.href = "/login";
+                } else {
+                    toastr.error('Something went wrong!');
+                }
+            }
+        });
+    });
+</script>
 @endsection

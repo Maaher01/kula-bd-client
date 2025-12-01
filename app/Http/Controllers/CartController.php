@@ -66,10 +66,14 @@ class CartController extends Controller
         $item->quantity = $request->quantity;
         $item->save();
 
+        $cart = $item->cart;
+        $subtotal = $cart->cartItems->sum(fn($i) => $i->quantity * $i->unit_price);
+
         return response()->json([
             'success' => true,
             'message' => 'Quantity Updated',
-            'total' => $item->quantity * $item->unit_price
+            'total' => $item->quantity * $item->unit_price,
+            'subtotal' => $subtotal
         ]);
     }
 

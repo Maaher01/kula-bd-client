@@ -136,7 +136,7 @@
 
                         <!-- cart btn -->
                         <a href="/cart" class="cart-btn">
-                            <span class="cart-counter" id="cart-count">{{ $cartCount ?? 0 }}</span>
+                            <span class="cart-counter" id="cart-count">{{ $cartCount }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
                                 fill="none">
                                 <path
@@ -144,7 +144,6 @@
                                     fill="white" />
                             </svg>
                         </a>
-
                         <div class="phone-wraper">
                             <div class="icon-wraper">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"

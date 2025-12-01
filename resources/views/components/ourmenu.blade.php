@@ -40,15 +40,15 @@
                         <!-- Buttons -->
                         <div class="d-flex justify-content-end gap-2">
                             <div class="menu-btn mt-2">
-                                <a href="{{ url('item-details/' . $product->id) }}" class="btn btn-primary"> View Details </a>
-                            </div>
-                            <div class="menu-btn mt-2">
                                 <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <input type="hidden" name="quantity" value="1" min="1">
-                                    <button type=" submit" class="btn" style="background: var(--primary-color);">Add To Cart</button>
+                                    <button type="submit" class="btn" style="background: var(--primary-color);">Add To Cart</button>
                                 </form>
+                            </div>
+                            <div class="menu-btn mt-2">
+                                <a href="{{ url('item-details/' . $product->id) }}" class="btn btn-primary"> View Details </a>
                             </div>
                         </div>
                     </div>
@@ -65,6 +65,7 @@
     </div>
 </div>
 <!-- food menu end -->
+@endsection
 @section('script')
 <script>
     $('.add-to-cart-form').on('submit', function(e) {
@@ -78,14 +79,16 @@
             data: form.serialize(),
             success: function(response) {
                 $('#cart-count').text(response.cartCount);
-
                 toastr.success(response.message);
             },
-            error: function() {
-                toastr.error('Something went wrong!');
+            error: function(xhr) {
+                if (xhr.status === 401) {
+                    window.location.href = "/login";
+                } else {
+                    toastr.error('Something went wrong!');
+                }
             }
         });
     });
 </script>
-@endsection
 @endsection
