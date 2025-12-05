@@ -1,6 +1,6 @@
 <section class="order-details-section" style="padding: 10px; border-radius: 10px;">
     {{-- Order Info --}}
-    <h5>Checkout Date: {{ $order->created_at->format('M d, Y') }}</h5>
+    <h5>Checkout Date: {{ $order->created_at->addHours(6)->format('M d, Y h:i A') }}</h5>
     <div class="row">
         <div class="col-md-6">
             <h6>Payment Status: <span>{{ $order->payment_status }}</span></h6>
@@ -14,7 +14,7 @@
     </div>
 
     <h6>Order Status: <span>{{ $order->order_status }}</span></h6>
-    <h6>Last Update: {{ $order->updated_at->format('M d, Y') }}</h6>
+    <h6>Last Update: {{ $order->updated_at->addHours(6)->format('M d, Y h:i A') }}</h6>
 
     <hr style="border-top:1px solid #ff8c00; opacity:.7; margin:20px 0;">
 
@@ -59,14 +59,25 @@
     </div>
 
     {{-- Summary --}}
-    <div style="border-top:1px solid #444; padding-top:20px;">
-        <h5 style="color:#ff8c00;">Order Summary</h5>
-        <div class="row mt-3">
-            <div class="col-12"><strong>Sub Total (৳):</strong> {{ number_format($order->sub_total, 0) }}</div>
-            <div class="col-12"><strong>Grand Total (৳):</strong>
-                <span style="color:#ff8c00;">{{ number_format($order->grand_total, 0) }}</span>
-            </div>
-        </div>
+    <div class="p-4 rounded mt-4" style="background:#1a1a1a; border:1px solid #333;">
+        <h5 class="mb-3" style="color:#ff8c00;">Order Summary</h5>
+
+        <ul class="list-unstyled text-light" style="font-size:15px;">
+            <li class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                <h6>Subtotal (৳):</h6>
+                <span>{{ number_format($order->sub_total, 0) }}</span>
+            </li>
+
+            <li class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                <h6>VAT (৳):</h6>
+                <span>{{ number_format($vatAmount, 0) }}</span>
+            </li>
+
+            <li class="d-flex justify-content-between pt-3 fs-5 fw-bold" style="color:#ff8c00;">
+                <span>Grand Total (৳):</span>
+                <span>{{ number_format($order->grand_total, 0) }}</span>
+            </li>
+        </ul>
     </div>
 
 </section>

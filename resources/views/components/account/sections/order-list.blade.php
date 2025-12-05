@@ -12,13 +12,13 @@
             <thead style="background-color: #111; text-transform: uppercase; font-size: 14px;">
                 <tr>
                     <th></th>
+                    <th>Order No</th>
                     <th>Phone No</th>
                     <th>Created Date</th>
                     <th>Payment Type</th>
                     <th>Payment Status</th>
                     <th>Order Status</th>
                     <th>Grand Total</th>
-                    <th>Order No</th>
                 </tr>
             </thead>
             <tbody style="color: #ddd;">

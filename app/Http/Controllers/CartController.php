@@ -73,7 +73,7 @@ class CartController extends Controller
         $subtotal = $cart->cartItems->sum(fn($i) => $i->quantity * $i->unit_price);
 
         $vatPercentage = CompanyProfile::first()->vat_percentage;
-        $vatAmount = ($subtotal * $vatPercentage) / 100;
+        $vatAmount = ($vatPercentage / 100) * $subtotal;
 
         return response()->json([
             'success' => true,

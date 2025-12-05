@@ -64,17 +64,13 @@
                         <span>Subtotal:</span>
                         <span id="summary-subtotal">Tk. {{ $subtotal }}</span>
                     </li>
-                    <!-- <li class="d-flex justify-content-between py-3 border-bottom">
-                        <span>Delivery Charge:</span>
-                        <span>Tk. 30</span>
-                    </li>-->
                     <li class="d-flex justify-content-between py-3 border-bottom">
                         <span>VAT:</span>
-                        <span>Tk. 20</span>
+                        <span id="summary-vat">Tk. {{ ($vat/100) * $subtotal }}</span>
                     </li>
                     <li class="d-flex justify-content-between py-3 fw-bold fs-5">
                         <span>Grand Total:</span>
-                        <span id="summary-grandtotal">Tk. {{ $subtotal }}</span>
+                        <span id="summary-grandtotal">Tk. {{ (($vat/100) * $subtotal) + $subtotal }}</span>
                     </li>
                 </ul>
                 <a href="{{ route('checkout.proceed') }}" class="btn text-dark w-100 mt-3 fw-bold" style="background: #F39C12;">Proceed To Checkout</a>
@@ -101,13 +97,14 @@
                 // Update single item total cell
                 $(this).closest('tr').find('#item-total').text("Tk." + res.total);
 
+                // Update subtotal
                 $('#summary-subtotal').text("Tk." + res.subtotal);
 
-                let delivery = 0;
-                // let vat = 0;
-                let grandTotal = parseFloat(res.subtotal) + vat;
+                // Update vat amount
+                $("#summary-vat").text("Tk." + res.vatAmount)
 
-                $('#summary-grandtotal').text("Tk. " + grandTotal)
+                // Update grandtotal
+                $('#summary-grandtotal').text("Tk. " + (res.grandtotal))
             }.bind(this)
         });
     });

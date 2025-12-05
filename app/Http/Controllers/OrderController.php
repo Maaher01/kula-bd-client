@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Companyprofile;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,9 +15,13 @@ class OrderController extends Controller
         $user = auth()->user();
 
         $subtotal = $userCart?->cartItems->sum(fn($item) => $item->quantity * $item->unit_price) ?? 0;
-        $grandTotal = $subtotal;
 
-        return view('components.checkout', compact('userCart', 'user', 'subtotal', 'grandTotal'));
+        $vat = CompanyProfile::first()->vat_percentage;
+        $vatAmount = ($vat / 100) * $subtotal;
+
+        $grandTotal = $vatAmount +  $subtotal;
+
+        return view('components.checkout', compact('userCart', 'user', 'subtotal', 'vatAmount', 'grandTotal'));
     }
 
     public function placeOrder(Request $request)
@@ -46,8 +51,6 @@ class OrderController extends Controller
             'sub_total' => $request->sub_total,
             'grand_total' => $request->grand_total,
             'payment_type' => $request->payment_type,
-            'delivery_charge' => 0,
-            'checkout_date' => now(),
             'note' => $request->note,
             'order_status' => 'pending',
             'payment_status' => 'unpaid'
@@ -79,7 +82,10 @@ class OrderController extends Controller
     {
         $order = Order::with('orderItems.product.productImages')->findOrFail($id);
 
-        return view('components.account.sections.order-details', compact('order'));
+        $vatPercentage = CompanyProfile::first()->vat_percentage;
+        $vatAmount = ($vatPercentage / 100) * $order->sub_total;
+
+        return view('components.account.sections.order-details', compact('order', 'vatAmount'));
     }
 
     public function showConfirmation(Order $order)

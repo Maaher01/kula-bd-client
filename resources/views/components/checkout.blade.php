@@ -61,14 +61,10 @@
                             <span>Subtotal:</span>
                             <span>Tk. {{ $subtotal }}</span>
                         </li>
-                        <!-- <li class="d-flex justify-content-between py-2 border-bottom">
-                            <span>Delivery Charge:</span>
-                            <span>Tk. 30</span>
-                        </li>
                         <li class="d-flex justify-content-between py-2 border-bottom">
                             <span>VAT:</span>
-                            <span>Tk. 20</span>
-                        </li> -->
+                            <span>Tk. {{ $vatAmount }}</span>
+                        </li>
                         <li class="d-flex justify-content-between py-3 fw-bold fs-5">
                             <span>Grand Total:</span>
                             <span>Tk. {{ $grandTotal }}</span>
