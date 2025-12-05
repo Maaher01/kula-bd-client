@@ -2926,7 +2926,199 @@ table tbody tr:last-child td:last-child {
     max-width: 100%;
   }
 }
+/*-------------------------
+   Account Page
+-------------------------*/
+.account-container {
+  max-width: 1140px;
+}
 
+/* Sidebar */
+.sidebar {
+  min-height: 400px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.profile-img .edit-icon {
+  display: none; /* hidden by default */
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent circle */
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover .edit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-img:hover .edit-icon i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.sidebar-menu .menu-item {
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.sidebar-menu .menu-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-menu .menu-item:hover {
+  background: #f39c12;
+}
+
+/* Active State (Orange highlight) */
+.sidebar-menu .active {
+  background: #f39c12;
+}
+
+.sidebar-menu .active a {
+  color: #fff !important;
+}
+
+/* Content Box */
+.content-area {
+  min-height: 250px;
+}
+
+/* Black & Orange Theme Elements */
+.basic-info-section .label {
+  min-width: 150px;
+  color: #ccc !important;
+}
+
+.basic-info-section .value {
+  color: #fff;
+}
+
+.basic-info-section .btn:hover {
+  background: #ff8c00 !important;
+  color: #222 !important;
+}
+/*-------------------------
+    Order Confirmation
+-------------------------*/
+.order-confirm-main {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.order-confirm-sub {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 60px;
+  background-color: white;
+}
+
+@media (max-width: 990px) {
+  .order-confirm-sub {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-confirm-sub {
+    max-width: 540px;
+  }
+}
+
+.order-confirm-sub .content {
+  padding: 50px 150px;
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  .order-confirm-sub .content {
+    padding: 50px 75px;
+  }
+}
+
+@media (max-width: 550px) {
+  .order-confirm-sub .content {
+    padding: 50px 25px;
+  }
+}
+
+.tick-circle {
+  height: 110px;
+  width: 110px;
+  border-radius: 100%;
+  background: #f39c12;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+}
+
+.tick-circle i {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+}
+
+.success-message {
+  text-align: center;
+}
+
+.success-message h3 {
+  margin: 15px 0 0 0;
+  font-size: 19px;
+}
+
+.success-message h4 {
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.success-message p {
+  font-size: 18px;
+  margin: 15px 0 0 0;
+}
+
+.home-btn {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.home-btn button {
+  background-color: black;
+  color: #f39c12;
+  border: 1px solid #f39c12;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
 /*-------------------------
     3.4 Footer 2
 -------------------------*/

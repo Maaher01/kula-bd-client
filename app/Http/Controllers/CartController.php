@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\CartItem;
+use App\Models\Companyprofile;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -15,9 +16,11 @@ class CartController extends Controller
             ->where('user_id', auth()->id())
             ->first();
 
+        $vat = CompanyProfile::first()->vat_percentage;
+
         $cartCount = $userCart ? $userCart->cartItems->count() : 0;
 
-        return view('components.cart', compact('userCart', 'cartCount'));
+        return view('components.cart', compact('userCart', 'cartCount', 'vat'));
     }
 
     public function addToCart(Request $request)
@@ -69,11 +72,16 @@ class CartController extends Controller
         $cart = $item->cart;
         $subtotal = $cart->cartItems->sum(fn($i) => $i->quantity * $i->unit_price);
 
+        $vatPercentage = CompanyProfile::first()->vat_percentage;
+        $vatAmount = ($subtotal * $vatPercentage) / 100;
+
         return response()->json([
             'success' => true,
             'message' => 'Quantity Updated',
             'total' => $item->quantity * $item->unit_price,
-            'subtotal' => $subtotal
+            'subtotal' => $subtotal,
+            'vatAmount' => $vatAmount,
+            'grandtotal' => $subtotal + $vatAmount
         ]);
     }
 

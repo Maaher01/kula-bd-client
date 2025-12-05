@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,12 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/cart/remove/{id}', [CartController::class, 'removeProductFromCart'])->name('cart.remove');
     Route::get('/checkout', [OrderController::class, 'proceedToCheckout'])->name('checkout.proceed');
     Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('order.place');
+    Route::get('/orders', [OrderController::class, 'getUserOrders']);
+    Route::get('/order-details/{id}', [OrderController::class, 'getOrderDetails'])->name('order.details');
+    Route::get('/order-confirmation/{order}', [OrderController::class, 'showConfirmation'])->name('order.confirmation');
+    Route::get('/profile/edit', [AccountController::class, 'editProfile'])->name('profile.edit');
+    Route::post('/profile/update', [AccountController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/profile/photo', [AccountController::class, 'updateProfilePhoto'])->name('profile.update.photo')->middleware('auth');
 });
 Route::post('/messagesubmit', [HomepageController::class, 'messagesubmit']);
 Route::get('/register', [HomepageController::class, 'register'])->middleware('guest');
@@ -30,7 +37,7 @@ Route::get('/login', [HomepageController::class, 'login'])->middleware('guest')-
 Route::get('/about', [HomepageController::class, 'aboutus']);
 Route::get('/faq', [HomepageController::class, 'faq']);
 Route::get('/gallery', [HomepageController::class, 'gallery']);
-Route::get('contact', [HomepageController::class, 'contact']);
+Route::get('/contact', [HomepageController::class, 'contact']);
 
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);

@@ -31,6 +31,7 @@ class OrderController extends Controller
         ]);
 
         $user = auth()->user();
+
         $cart = Cart::with('cartItems.product')->where('user_id', $user->id)->first();
 
         if (!$cart || $cart->cartItems->isEmpty()) {
@@ -62,6 +63,27 @@ class OrderController extends Controller
 
         $cart->cartItems()->delete();
 
-        return redirect()->with('success', 'Your order has been placed successfully!');
+        return redirect()->route('order.confirmation', ['order' => $order->id]);
+    }
+
+    public function getUserOrders()
+    {
+        $user = auth()->user();
+
+        $orders = Order::where('user_id', $user->id)->latest()->get();
+
+        return view('components.account.index', compact('orders'));
+    }
+
+    public function getOrderDetails($id)
+    {
+        $order = Order::with('orderItems.product.productImages')->findOrFail($id);
+
+        return view('components.account.sections.order-details', compact('order'));
+    }
+
+    public function showConfirmation(Order $order)
+    {
+        return view('components.order-confirmation', compact('order'));
     }
 }

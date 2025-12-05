@@ -18,7 +18,7 @@
         @foreach ($categories as $category)
         <div class="row justify-content-center mb-40">
             <div class="col-lg-7 text-center">
-                <h3 class="section-title mb-18 mt-60 wow fadeInUp" data-wow-delay=".2s">{!! $category->name !!}</h2>
+                <h3 class="section-title mb-18 mt-60 wow fadeInUp" data-wow-delay=".2s">{!! $category->name !!}</h3>
             </div>
         </div>
         <div class="row gy-4 gx-lg-5">

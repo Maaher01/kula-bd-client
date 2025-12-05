@@ -96,6 +96,11 @@ class HomepageController extends Controller
         return view('components.checkout');
     }
 
+    public function account()
+    {
+        return view('components.account.index');
+    }
+
     public function contact()
     {
         return view('components.contact');
