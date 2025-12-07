@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
-use App\Models\Companyprofile;
 use Illuminate\Http\Request;
+use App\Models\Companyprofile;
 
 class OrderController extends Controller
 {
@@ -13,6 +13,13 @@ class OrderController extends Controller
     {
         $userCart = Cart::with('cartItems.product.productImages')->where('user_id', auth()->id())->first();
         $user = auth()->user();
+
+        $cartCount = $userCart?->cartItems->count() ?? 0;
+
+        if ($cartCount == 0) {
+            return redirect('/cart')
+                ->with('error', 'You cannot checkout with an empty cart.');
+        }
 
         $subtotal = $userCart?->cartItems->sum(fn($item) => $item->quantity * $item->unit_price) ?? 0;
 

@@ -11,7 +11,7 @@ class CategoryController extends Controller
      */
     public function showCategoryProducts()
     {
-        $categories = Category::with('products')->get();
+        $categories = Category::with(['products', 'categoryImages'])->get();
 
         return view('components.ourmenu', compact('categories'));
     }

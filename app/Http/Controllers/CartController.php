@@ -20,6 +20,12 @@ class CartController extends Controller
 
         $cartCount = $userCart ? $userCart->cartItems->count() : 0;
 
+        if ($cartCount == 0) {
+            return redirect('/')
+                ->with('error', 'Your cart is empty.');
+        }
+
+
         return view('components.cart', compact('userCart', 'cartCount', 'vat'));
     }
 

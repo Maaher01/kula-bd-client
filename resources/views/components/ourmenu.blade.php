@@ -24,7 +24,13 @@
         <div class="row gy-4 gx-lg-5">
             <div class="col-12 col-lg-4 col-xxl-3">
                 <div class="left-side">
-                    <div class="reveal-img"> <img class="" src="./assets/images/items/2025-10-20 12 57 44.png" alt="img"> </div> {{-- <a class="link wow fadeInUp" data-wow-delay=".2s" href="#">VIEW ALL MENU</a> --}}
+                    <div class="reveal-img">
+                        @if($category->categoryImages->first())
+                        <img src="{{ asset('http://127.0.0.1:8001/uploads/' . $category->categoryImages->first()->image_path)}}" alt="Category Image 1">
+                        @else
+                        <img src="{{ asset('assets/images/default-category.png') }}" alt="Default Image">
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-4 col-xxl-6">
@@ -57,7 +63,13 @@
             </div>
             <div class="col-12 col-lg-4 col-xxl-3">
                 <div class="right-side">
-                    <div class="reveal-img"> <img src="./assets/images/items/2025-10-20 12 58 04.png" alt="img"> </div>
+                    <div class="reveal-img">
+                        @if($category->categoryImages->first())
+                        <img src="{{ asset('http://127.0.0.1:8001/uploads/' . $category->categoryImages->skip(1)->first()->image_path)}}" alt="Category Image 1">
+                        @else
+                        <img src="{{ asset('assets/images/default-category.png') }}" alt="Default Image">
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

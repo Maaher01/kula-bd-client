@@ -5,7 +5,10 @@
         <h1 class="text-uppercase m-0" style="font-size: 18px; color: #f39c12;">
             Basic Information
         </h1>
-        <button class="btn btn-md" id="editProfileBtn" style="background: #f39c12; color: white; font-weight: 700;">
+        <button class="btn btn-md"
+            style="background:#f39c12; color:white; font-weight:700;"
+            data-bs-toggle="modal"
+            data-bs-target="#editProfileModal">
             Edit
         </button>
     </div>

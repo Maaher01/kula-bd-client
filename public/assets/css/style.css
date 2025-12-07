@@ -3495,6 +3495,11 @@ table tbody tr:last-child td:last-child {
   gap: 7px;
   border: 1px solid transparent;
 }
+.disabled-cart {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .template-btn svg path,
 .primary-btn svg path,
 .white-btn svg path,

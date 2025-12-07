@@ -8,7 +8,7 @@
             <div class="sidebar p-3 shadow-sm rounded" style="background-color: #222; color: white;">
                 {{-- Profile --}}
                 <div class="text-center">
-                    <!-- <div class="profile-img mx-auto mb-3 position-relative" style="width: 120px; height: 120px;">
+                    <div class="profile-img mx-auto mb-3 position-relative" style="width: 120px; height: 120px;">
                         <img id="profile-img-preview" src="{{ auth()->user()->photo }}" alt="User" class="rounded-circle w-100 h-100">
                         <div class="edit-icon position-absolute top-50 start-50 translate-middle">
                             <label for="profile-upload" class="mb-0">
@@ -16,7 +16,7 @@
                             </label>
                             <input type="file" id="profile-upload" style="display:none;" accept="image/*">
                         </div>
-                    </div> -->
+                    </div>
                     <h6 class="fw-bold">{{ auth()->user()->name ?? 'User' }}</h6>
                 </div>
                 {{-- Navigation --}}
@@ -76,6 +76,7 @@
 
         document.getElementById('menu-basic-info').addEventListener('click', function(e) {
             e.preventDefault();
+            history.pushState(null, '', window.location.pathname);
             basicInfoSection.style.display = 'block';
             ordersSection.style.display = 'none';
         });
